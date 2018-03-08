@@ -1,0 +1,21 @@
+{
+  "img":{
+    "type": ["jpg", "png", "gif"],
+    "path": "./client/path/to/img/directory/"
+  },
+
+  "css":{
+    "path": "./client/path/to/css/directory/",
+    "rename": null
+  },
+
+  "js":{
+    "path": "./client/path/to/img/directory/",
+    "rename": null
+  },
+
+  "html":{
+    "path": "./client/path/to/img/directory/",
+    "rename": null
+  }
+}
