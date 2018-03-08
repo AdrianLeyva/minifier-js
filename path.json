@@ -1,21 +1,29 @@
 {
   "img":{
-    "type": ["jpg", "png", "gif"],
-    "path": "./client/path/to/img/directory/"
+    "src":
+    [
+      "./client/path/to/img/directory/*.png",
+      "./client/path/to/img/directory/*.jpg",
+      "./client/path/to/img/directory/*.gif"
+    ],
+    "destination": "./path/of/destination"
   },
 
   "css":{
-    "path": "./client/path/to/css/directory/",
+    "src": ["./client/path/to/css/directory/*.css"],
+    "destination": "./path/of/destination",
     "rename": null
   },
 
   "js":{
-    "path": "./client/path/to/img/directory/",
+    "src": ["./client/path/to/js/directory/*.js"],
+    "destination": "./path/of/destination",
     "rename": null
   },
 
   "html":{
-    "path": "./client/path/to/img/directory/",
+    "src": ["./client/path/to/html/directory/*.html"],
+    "destination": "./path/of/destination",
     "rename": null
   }
 }
