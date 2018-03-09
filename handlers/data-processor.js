@@ -5,12 +5,12 @@
 //Modules
 const fs = require('fs');
 
-var DataProcessor = () => {
+var DataProcessor = function() {
 
 };
 
-DataProcessor.prototype.readFile = (callback) => {
-    const PATH = '../path.json';
+DataProcessor.prototype.readFile = function(callback) {
+    const PATH = './path.json';
 
     fs.readFile(PATH, 'utf8', function (err, data) {
         if (err){
@@ -21,3 +21,5 @@ DataProcessor.prototype.readFile = (callback) => {
             callback(JSON.parse(data));
     });
 };
+
+module.exports = DataProcessor;

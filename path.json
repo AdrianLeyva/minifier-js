@@ -2,28 +2,29 @@
   "img":{
     "src":
     [
-      "./client/path/to/img/directory/*.png",
-      "./client/path/to/img/directory/*.jpg",
-      "./client/path/to/img/directory/*.gif"
+      "/path/to/directory/*.png",
+      "/path/to/directory/*.jpg",
+      "/path/to/directory/*.gif"
     ],
-    "destination": "./path/of/destination"
+    "destination": "/path/to/directory/"
   },
 
   "css":{
-    "src": ["./client/path/to/css/directory/*.css"],
-    "destination": "./path/of/destination",
-    "rename": null
+    "src": [
+      "/path/to/directory/styles.css"
+    ],
+    "destination": "/path/to/directory/"
   },
 
   "js":{
-    "src": ["./client/path/to/js/directory/*.js"],
-    "destination": "./path/of/destination",
-    "rename": null
+    "src": [
+      "/path/to/directory/app.js"
+    ],
+    "destination": "/path/to/directory/"
   },
 
   "html":{
-    "src": ["./client/path/to/html/directory/*.html"],
-    "destination": "./path/of/destination",
-    "rename": null
+    "src": ["/path/to/directory/*.html"],
+    "destination": "/path/to/directory/"
   }
 }

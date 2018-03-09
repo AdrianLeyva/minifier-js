@@ -4,30 +4,33 @@
 'use strict';
 //modules
 
-var Core = () => {
+var Core = function() {
     this.DataProcessor = require('./data-processor');
     this.MinifierJS = require('./minifier-js');
 };
 
-Core.prototype.init = () => {
+Core.prototype.init = function() {
     console.log('MinifierJS running');
     let mDataProcessor = new this.DataProcessor();
-    let mMinifierJS;
+    var mMinifierJS = new this.MinifierJS(null);
 
-    mDataProcessor.readFile((JSON) => {
-        mMinifierJS = new this.MinifierJS(JSON);
-        mMinifierJS.minifyCSS();
-        mMinifierJS.minifyHTML();
-        mMinifierJS.minifyIMG();
-        mMinifierJS.minifyJS();
+    mDataProcessor.readFile(function(JSON) {
+        if(JSON != null){
+            mMinifierJS.setJSON(JSON, function () {
+                mMinifierJS.minifyCSS();
+                mMinifierJS.minifyHTML();
+                mMinifierJS.minifyIMG();
+                mMinifierJS.minifyJS();
+            });
+        }
     })
 };
 
-Core.prototype.restart = () => {
+Core.prototype.restart = function() {
     console.log('MinifierJS restarting')
 };
 
-Core.prototype.stop = () => {
+Core.prototype.stop = function() {
     console.log('MinifierJS stoping')
 };
 

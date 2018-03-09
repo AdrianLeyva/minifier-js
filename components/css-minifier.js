@@ -8,11 +8,12 @@ const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 const config = require('../configuration/configuration');
 
-module.exports = (src, destination, callback) => {
+module.exports = function(src, destination, callback) {
     gulp.src(src)
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(destination));
-
-    callback(config.MINIFY.SUCCESS);
+        .pipe(gulp.dest(destination))
+        .on('end', function () {
+            callback(config.MINIFY.SUCCESS);
+        });
 };

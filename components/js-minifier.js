@@ -4,16 +4,16 @@
 'use strict';
 //Modules
 const gulp = require('gulp');
-const pump = require('pump');
+const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const config = require('../configuration/configuration');
 
-module.exports = (src, destination, callback) => {
-    pump([
-            gulp.src(src),
-            uglify(),
-            gulp.dest(destination)
-        ],
-        callback(config.MINIFY.SUCCESS)
-    );
+module.exports = function(src, destination, callback) {
+    gulp.src(src)
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(destination))
+        .on('end', function () {
+            callback(config.MINIFY.SUCCESS);
+        });
 };

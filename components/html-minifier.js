@@ -7,10 +7,11 @@ const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
 const config = require('../configuration/configuration');
 
-module.exports = (src, destination, callback) => {
+module.exports = function(src, destination, callback) {
     gulp.src(src)
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(destination))
-        .on('end', callback(config.MINIFY.SUCCESS))
-        .on('error', callback(config.MINIFY.ERROR));
+        .on('end', function () {
+            callback(config.MINIFY.SUCCESS);
+        });
 };

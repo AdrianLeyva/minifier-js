@@ -1,4 +1,17 @@
 {
   "name": "minimizerJS",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "optipng-bin": "^4.0.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
 }
